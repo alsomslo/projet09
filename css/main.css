@@ -1,0 +1,97 @@
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+
+
+}
+
+.header .header_wrap {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.header .logo {
+    display: block;
+    width: 138px;
+    height: 40px;
+    background: url(../images/logo_w.png)no-repeat;
+}
+
+.header .logo.on {
+    background: url(../images/logo_b.png) no-repeat;
+}
+
+
+
+.header .gnb>ul {
+    display: flex;
+}
+
+.header .gnb>ul>li {
+    position: relative;
+    color: #fff;
+    height: 70px;
+    line-height: 70px;
+    font-size: 20px;
+    padding: 0 30px;
+}
+
+
+
+
+
+
+.header .gnb>ul>li .sub {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #fff;
+    font-size: 18px;
+    width: 240px;
+    text-align: center;
+
+
+    border-radius: 20px;
+
+    visibility: hidden;
+
+    opacity: 0;
+    transition: 0.5s;
+
+}
+
+.header .gnb .sub li {
+    color: #666;
+    height: 50px;
+    line-height: 50px;
+
+    transition: 0.5s;
+}
+
+.header .gnb>ul>li:hover .sub {
+    visibility: visible;
+    opacity: 1;
+
+
+}
+
+.itm {
+    height: 100vh;
+}
+
+
+.itm01 {
+    background: url(../images/section01_01.png) no-repeat center center/cover;
+}
+
+.itm02 {
+    background: url(../images/section01_02.png) no-repeat center center/cover;
+}
+
+.itm03 {
+    background: url(../images/section01_03.png) no-repeat center center/cover;
+}
