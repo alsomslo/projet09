@@ -270,9 +270,12 @@ body {
 .maincontact .txt_box {
     display: flex;
     justify-content: space-between;
+    font-size: 13px;
     margin: 0 0 50px 0;
 
 }
+
+
 
 
 
@@ -285,6 +288,7 @@ body {
 }
 
 .maincontact .txt_box span {
+    display: i;
     color: #666;
 }
 
@@ -335,9 +339,7 @@ body {
 /* mobile */
 
 @media (max-width:768px) {
-    html {
-        font-size: 62.5%
-    }
+
 
     body {
         color: #000;
@@ -360,25 +362,28 @@ body {
 
     .header .header_wrap {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        height: 100px;
+        height: 50px;
 
 
     }
 
     .header h1 {
         padding: 0 0 0 15px;
+        height: 25px;
     }
 
     .header .logo {
         background-image: url(../images/logo_w.png) no-repeat;
-        background-size: 150px 25px;
+        background-size: 100px 20px;
+
+
+
     }
 
     .header.on .logo {
         background-image: url(../images/logo_b.png) no-repeat;
-        background-size: 150px 25px;
+        background-size: 100px 20px;
     }
 
 
@@ -437,7 +442,7 @@ body {
         background: rgba(0, 0, 0, 0.1);
         padding: 0 0 0 0;
         text-align: left;
-
+        font-size: 12px;
         transform: none;
         opacity: 1;
         visibility: visible;
@@ -466,7 +471,7 @@ body {
         display: block;
 
         position: fixed;
-        inset: 30px 30px auto auto;
+        inset: 10px 30px auto auto;
         z-index: 1000;
         width: 30px;
         height: 30px;
@@ -731,19 +736,25 @@ body {
 
     }
 
+    .maincontact .txt_box li {
+        display: flex;
+
+    }
+
 
 
     .maincontact .txt_box strong {
-        display: inline-block;
-        width: 80px;
-
+        display: block;
+        width: 70px;
         font-weight: 500;
         font-family: 'Noto Sans KR';
 
     }
 
     .maincontact .txt_box span {
+        display: block;
         color: #666;
+        width: 100%;
     }
 
     .footer {
@@ -756,8 +767,9 @@ body {
         align-items: center;
         gap: 20px;
         flex-direction: column;
-
         font-weight: 400;
+        white-space: nowrap;
+        font-size: 12px;
 
         color: #666;
 
