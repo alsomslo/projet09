@@ -4,6 +4,8 @@ $(function () {
         sct > 0 ? $('.header').addClass('on') : $('.header').removeClass('on');
     })
 
+    $('.header h1').on('click', function () { })
+
     $(".mainslide").slick({
         arrows: false,
     })
@@ -12,6 +14,7 @@ $(function () {
     $('.mobile_btn').on('click', function () {
         $(this).toggleClass('on');
         $('.gnb').toggleClass('on');
+
     });
 
     $('.gnb>ul>li>a').on('click', function (e) {

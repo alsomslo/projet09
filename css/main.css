@@ -5,7 +5,7 @@ body {
 .title {
     font-size: 80px;
     font-weight: 500;
-    margin: 0 0 100px 0;
+    margin: 0 0 70px 0;
 }
 
 
@@ -247,7 +247,7 @@ body {
 
 .mainareas .areas .areas_box .desc {
     position: absolute;
-    font-size: 20px;
+    font-size: 15px;
     bottom: 50px;
     left: 40px;
     color: #fff;
@@ -263,6 +263,54 @@ body {
     opacity: 1;
 }
 
+.maincontact {
+    padding: 100px 0;
+}
+
+.maincontact .txt_box {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 50px 0;
+
+}
+
+
+
+.maincontact .txt_box strong {
+    display: inline-block;
+    margin: 0 30px 0 0;
+    font-weight: 500;
+    font-family: 'Noto Sans KR';
+
+}
+
+.maincontact .txt_box span {
+    color: #666;
+}
+
+.footer {
+    height: 50px;
+}
+
+.footer .footer_wrap {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer .footer_wrap ul {
+    display: flex;
+    gap: 30px;
+}
+
+.footer .footer_wrap ul>li strong {
+    font-weight: 600;
+}
+
+
+
 
 
 
@@ -275,6 +323,10 @@ body {
     display: none;
 }
 
+.header .gnb .m_logo {
+    display: none;
+}
+
 
 
 
@@ -283,6 +335,10 @@ body {
 /* mobile */
 
 @media (max-width:768px) {
+    html {
+        font-size: 62.5%
+    }
+
     body {
         color: #000;
     }
@@ -312,40 +368,66 @@ body {
     }
 
     .header h1 {
-        position: fixed;
-        z-index: 1000;
         padding: 0 0 0 15px;
     }
 
     .header .logo {
-
-
-
-        background: url(../images/logo_w.png) no-repeat;
-
-
+        background-image: url(../images/logo_w.png) no-repeat;
+        background-size: 150px 25px;
     }
 
     .header.on .logo {
-        background: url(../images/logo_b.png) no-repeat;
+        background-image: url(../images/logo_b.png) no-repeat;
+        background-size: 150px 25px;
     }
+
 
     .header .gnb {
         position: fixed;
         inset: 0 auto 0 100%;
         width: 100%;
         background: #444;
-        transition: 0.5s;
+
+        z-index: 999;
+
+    }
+
+    .header .gnb .m_logo {
+        display: block;
+        padding: 30px 0 0 30px;
+    }
+
+    .header .gnb .m_logo img {
+
+
+        height: 20px;
+        width: 100px;
     }
 
     .header .gnb.on {
-        inset: 0 auto 0 0;
+        inset: 0 auto 0 5%;
+    }
+
+    .header .gnb.on::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 5%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+
     }
 
     .header .gnb>ul {
         flex-direction: column;
         gap: 0;
         padding: 150px 30px 0 30px
+    }
+
+    .header.on .gnb>ul>li>a {
+        color: #fff;
+
     }
 
 
@@ -355,6 +437,7 @@ body {
         background: rgba(0, 0, 0, 0.1);
         padding: 0 0 0 0;
         text-align: left;
+
         transform: none;
         opacity: 1;
         visibility: visible;
@@ -370,6 +453,7 @@ body {
 
     .header .gnb .sub li {
         color: #fff;
+        padding: 0 0 0 10px;
     }
 
 
@@ -386,11 +470,12 @@ body {
         z-index: 1000;
         width: 30px;
         height: 30px;
-        background: #ddd;
-        border-radius: 5px;
+
 
 
     }
+
+
 
     .mobile_btn::after,
     .mobile_btn::before {
@@ -398,9 +483,17 @@ body {
         position: absolute;
         inset: 14px 5px auto 5px;
         height: 2px;
-        background: #444;
+        background: #fff;
+    }
 
+    .header.on .mobile_btn::after,
+    .header.on .mobile_btn::before {
+        background: #000;
+    }
 
+    .header.on .mobile_btn.on::before,
+    .header.on .mobile_btn.on::after {
+        background: #fff;
     }
 
     .mobile_btn.on::before {
@@ -426,7 +519,7 @@ body {
         content: "";
         position: absolute;
         height: 2px;
-        background: #444;
+        background: #fff;
 
     }
 
@@ -446,18 +539,10 @@ body {
         display: none;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    .header.on .mobile_btn button::after,
+    .header.on .mobile_btn button::before {
+        background: #000;
+    }
 
 
 
@@ -517,6 +602,8 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 30px;
+        width: 100%;
+
     }
 
     .maincontent .content .img_box img {
@@ -527,8 +614,9 @@ body {
     .maincontent .content .img_box {
         margin: 0 0 10px 0;
         border-radius: 20px 0 20px 0;
-        width: 100%;
-        overflow: hidden;
+
+
+
     }
 
     .maincontent .content .img_box:hover img {
@@ -559,15 +647,24 @@ body {
         display: flex;
         gap: 30px;
         flex-direction: column;
-        width: auto;
+
+
 
 
     }
 
 
     .mainareas .areas .img_box {
-        height: 300px;
+
         transition: 0.5s;
+
+    }
+
+    .mainareas .areas .img_box img {
+        width: 100%;
+
+        height: 350px;
+        object-fit: cover;
     }
 
     .mainareas .areas .areas_box {
@@ -594,10 +691,10 @@ body {
 
     .mainareas .areas .areas_box .txt_box {
         position: absolute;
-        top: 70px;
-        left: 40px;
+        top: 20px;
+        left: 20px;
 
-        font-size: 32px;
+        font-size: 18px;
         color: #fff;
         font-weight: 500;
 
@@ -606,9 +703,9 @@ body {
 
     .mainareas .areas .areas_box .desc {
         position: absolute;
-        font-size: 20px;
-        bottom: 50px;
-        left: 40px;
+        font-size: 12px;
+        bottom: 20px;
+        left: 20px;
         color: #fff;
     }
 
@@ -620,5 +717,75 @@ body {
 
     .mainareas .areas .areas_box:hover .desc ul>li {
         opacity: 1;
+    }
+
+    .maincontact {
+        padding: 100px 0;
+    }
+
+    .maincontact .txt_box {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 0 0 50px 0;
+
+    }
+
+
+
+    .maincontact .txt_box strong {
+        display: inline-block;
+        width: 80px;
+
+        font-weight: 500;
+        font-family: 'Noto Sans KR';
+
+    }
+
+    .maincontact .txt_box span {
+        color: #666;
+    }
+
+    .footer {
+        height: 50px;
+        margin: 0 0 20px 0;
+    }
+
+    .footer .footer_wrap {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-direction: column;
+
+        font-weight: 400;
+
+        color: #666;
+
+    }
+
+    .footer .footer_wrap ul {
+        display: flex;
+        gap: 30px;
+
+    }
+
+    .footer .footer_wrap ul>li strong {
+        font-weight: 600;
+    }
+}
+
+@media (max-width : 580px) {
+    .mainareas .areas .img_box img {
+        width: 100%;
+
+        height: 300px;
+    }
+}
+
+@media (max-width : 400px) {
+    .mainareas .areas .img_box img {
+        width: 100%;
+
+        height: 250px;
     }
 }
