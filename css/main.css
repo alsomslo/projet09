@@ -382,24 +382,33 @@ body {
     }
 
     .header.on .logo {
-        background-image: url(../images/logo_b.png) no-repeat;
+
         background-size: 100px 20px;
     }
 
 
     .header .gnb {
         position: fixed;
-        inset: 0 auto 0 100%;
+        inset: 0 auto 0 5%;
         width: 100%;
-        background: #444;
-
+        background: url(../images/allmenu_bg.png) no-repeat top/cover;
+        background-size: 100% 70%;
+        background-color: #fff;
+        border-radius: 0 0 0 30%;
+        /* background: #444; */
+        visibility: hidden;
         z-index: 999;
-
+        opacity: 0;
+        transition: 0.5s;
     }
+
+
+
+
 
     .header .gnb .m_logo {
         display: block;
-        padding: 30px 0 0 30px;
+        padding: 15px 0 0 30px;
     }
 
     .header .gnb .m_logo img {
@@ -410,10 +419,12 @@ body {
     }
 
     .header .gnb.on {
+        visibility: visible;
+        opacity: 1;
         inset: 0 auto 0 5%;
     }
 
-    .header .gnb.on::after {
+    .header .gnb::after {
         content: "";
         position: fixed;
         top: 0;
